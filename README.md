@@ -27,3 +27,9 @@ Surf Summer School'23 Practice
    - Kotlin Coroutines
    - AndroidX Navigation
    - GSON для конвертации списка ингредиентов и хранения его в бд
+
+![Экран приветствия при пустом списке](app/src/main/res/screenshots/Empty_list_welcome_screen.jpg)
+![Создание новой записи коктейля](app/src/main/res/screenshots/New_cocktail_creation.jpg)
+![Валидация пустого названия коктейля](app/src/main/res/screenshots/Empty_title_validation.jpg)
+![Экран "Мои коктейли"](app/src/main/res/screenshots/My_cocktails_list.jpg)
+![Подробная информация о коктейле](https://github.com/TheyCallMeRobinson/Cocktail_Bar/blob/master/app/src/main/res/screenshots/Cocktail_info_details.jpg)
