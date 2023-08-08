@@ -1,6 +1,5 @@
 package surf.summerschool23.cocktailbar.data.model
 
-import androidx.annotation.Nullable
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
@@ -18,5 +17,8 @@ data class CocktailModel(
     val ingredients: List<String>,
 
     @ColumnInfo(name = "recipe")
-    val recipe: String?
+    val recipe: String?,
+
+    @ColumnInfo(typeAffinity = ColumnInfo.BLOB, name = "image")
+    val image: ByteArray?
 )

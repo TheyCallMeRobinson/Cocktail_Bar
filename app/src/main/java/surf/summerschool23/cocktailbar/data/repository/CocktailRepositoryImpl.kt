@@ -19,11 +19,11 @@ class CocktailRepositoryImpl(
     }
 
     override suspend fun updateCocktail(updatedCocktail: CocktailEntity) {
-        cocktailDAO.updateCocktail(cocktailMapper.toDBModel(updatedCocktail))
+        cocktailDAO.updateCocktail(cocktailMapper.toDbModel(updatedCocktail))
     }
 
     override suspend fun createNewCocktail(newCocktail: CocktailEntity) {
-        cocktailDAO.createNewCocktail(cocktailMapper.toDBModel(newCocktail))
+        cocktailDAO.createNewCocktail(cocktailMapper.toDbModel(newCocktail))
     }
 
 
