@@ -6,15 +6,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import surf.summerschool23.cocktailbar.R
+import surf.summerschool23.cocktailbar.databinding.FragmentCreateCocktailBinding
 
 class CreateCocktailFragment : Fragment() {
 
+    private lateinit var binding: FragmentCreateCocktailBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_create_cocktail, container, false)
+        binding = FragmentCreateCocktailBinding.inflate(inflater)
+
+        binding.createCocktailAddPhotoIv.clipToOutline = true
+
+        return binding.root
     }
 
 }

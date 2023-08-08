@@ -28,11 +28,14 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
+    }
+    buildFeatures {
+        viewBinding = true
     }
 }
 
@@ -52,7 +55,15 @@ dependencies {
     implementation("androidx.room:room-ktx:$roomVersion")
     kapt("androidx.room:room-compiler:$roomVersion")
 
+    // Lifecycle components
+    val androidxLifecycleVersion = "2.5.1"
+    implementation("androidx.lifecycle:lifecycle-common:$androidxLifecycleVersion")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:$androidxLifecycleVersion")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:$androidxLifecycleVersion")
+    implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
+
     implementation("androidx.core:core-ktx:1.9.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.9.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")

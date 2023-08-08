@@ -14,7 +14,7 @@ data class CocktailModel(
     val description: String?,
 
     @ColumnInfo(name = "ingredients")
-    val ingredients: List<String>,
+    val ingredients: ArrayList<String>,
 
     @ColumnInfo(name = "recipe")
     val recipe: String?,

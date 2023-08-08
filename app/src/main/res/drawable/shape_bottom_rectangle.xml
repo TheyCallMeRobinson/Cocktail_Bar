@@ -4,6 +4,8 @@
     android:shape="rectangle"
     android:tint="@color/white">
 
+    <solid android:color="@color/white" />
+
     <corners
         android:topLeftRadius="62dp"
         android:topRightRadius="62dp"/>
