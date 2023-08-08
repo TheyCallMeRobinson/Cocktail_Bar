@@ -1,9 +1,10 @@
 package surf.summerschool23.cocktailbar.presentation.view
 
 import android.content.Intent
-import android.graphics.BitmapFactory
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
+import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -43,9 +44,9 @@ class CreateCocktailFragment : Fragment() {
     private fun validateFields(): Boolean {
         if (binding.createCocktailTitleEt.text.isNullOrBlank()) {
             binding.createCocktailTitleTil.error = "Add Title"
-
             return false
         }
+
         return true
     }
 
@@ -76,9 +77,14 @@ class CreateCocktailFragment : Fragment() {
     }
 
     private fun pickImage() {
-        //val intent = Intent(MediaStore.ACTION_PICK_IMAGES)
-        val intent = Intent(Intent.ACTION_GET_CONTENT)
-        intent.type = "image/*"
+        val intent: Intent
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            intent = Intent(MediaStore.ACTION_PICK_IMAGES)
+        } else {
+            intent = Intent(Intent.ACTION_GET_CONTENT)
+            intent.type = "image/*"
+        }
+
         resultLauncher.launch(intent)
     }
 
@@ -93,8 +99,6 @@ class CreateCocktailFragment : Fragment() {
                 Toast.makeText(requireContext(), "No image was picked", Toast.LENGTH_LONG).show()
             }
         }
-
     }
-
 
 }

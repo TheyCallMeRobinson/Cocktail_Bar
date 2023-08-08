@@ -20,4 +20,7 @@ interface CocktailDAO {
 
     @Insert
     suspend fun createNewCocktail(newCocktail: CocktailModel)
+
+    @Query("SELECT * FROM cocktails WHERE title = :title")
+    suspend fun getByTitle(title: String): CocktailModel
 }

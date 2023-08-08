@@ -9,18 +9,21 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
+import org.koin.androidx.viewmodel.ext.android.activityViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import surf.summerschool23.cocktailbar.R
 import surf.summerschool23.cocktailbar.data.environment.Status
 import surf.summerschool23.cocktailbar.databinding.FragmentMyCocktailsBinding
 import surf.summerschool23.cocktailbar.domain.entity.CocktailEntity
 import surf.summerschool23.cocktailbar.presentation.adapter.CocktailListAdapter
+import surf.summerschool23.cocktailbar.presentation.viewmodel.MainViewModel
 import surf.summerschool23.cocktailbar.presentation.viewmodel.MyCocktailsViewModel
 
 class MyCocktailsFragment : Fragment() {
 
     private lateinit var binding: FragmentMyCocktailsBinding
     private val viewModel by viewModel<MyCocktailsViewModel>()
+    private val mainViewModel by activityViewModel<MainViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -61,8 +64,13 @@ class MyCocktailsFragment : Fragment() {
 
     private fun setCocktailsList(cocktailsList: List<CocktailEntity>) {
         val cocktailsListAdapter = CocktailListAdapter(
-            cocktailsList, BitmapFactory.decodeResource(resources, R.drawable.cocktail_placeholder)
-        )
+            cocktailsList,
+            BitmapFactory.decodeResource(resources, R.drawable.cocktail_placeholder)
+        ) {
+            cocktail -> mainViewModel.setCurrentCocktailTitle(cocktail.title)
+            findNavController().navigate(R.id.action_myCocktailsFragment_to_cocktailDetailsFragment)
+        }
+
         val gridLayoutManager = GridLayoutManager(requireContext(), 2)
         gridLayoutManager.orientation = GridLayoutManager.VERTICAL
         binding.myCocktailsListRv.apply {

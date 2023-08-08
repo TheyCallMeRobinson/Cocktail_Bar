@@ -26,5 +26,8 @@ class CocktailRepositoryImpl(
         cocktailDAO.createNewCocktail(cocktailMapper.toDbModel(newCocktail))
     }
 
+    override suspend fun getByTitle(title: String): CocktailEntity {
+        return cocktailMapper.toEntity(cocktailDAO.getByTitle(title))
+    }
 
 }

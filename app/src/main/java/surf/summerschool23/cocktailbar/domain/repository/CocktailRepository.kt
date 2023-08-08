@@ -8,4 +8,5 @@ interface CocktailRepository {
     suspend fun getCocktailsCount(): Int
     suspend fun updateCocktail(updatedCocktail: CocktailEntity)
     suspend fun createNewCocktail(newCocktail: CocktailEntity)
+    suspend fun getByTitle(title: String): CocktailEntity
 }
