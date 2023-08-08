@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MyCocktailsFragment">
+    tools:context=".presentation.view.MyCocktailsFragment">
 
     <TextView
         android:id="@+id/my_cocktails_title_tv"

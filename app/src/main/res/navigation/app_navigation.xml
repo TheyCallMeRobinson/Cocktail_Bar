@@ -6,7 +6,7 @@
     app:startDestination="@id/myCocktailsFragment">
     <fragment
         android:id="@+id/myCocktailsFragment"
-        android:name="surf.summerschool23.cocktailbar.MyCocktailsFragment"
+        android:name="surf.summerschool23.cocktailbar.presentation.view.MyCocktailsFragment"
         android:label="fragment_my_cocktails"
         tools:layout="@layout/fragment_my_cocktails" >
         <action
@@ -18,12 +18,12 @@
     </fragment>
     <fragment
         android:id="@+id/cocktailDetailsFragment"
-        android:name="surf.summerschool23.cocktailbar.CocktailDetailsFragment"
+        android:name="surf.summerschool23.cocktailbar.presentation.view.CocktailDetailsFragment"
         android:label="fragment_cocktail_details"
         tools:layout="@layout/fragment_cocktail_details" />
     <fragment
         android:id="@+id/createCocktailFragment"
-        android:name="surf.summerschool23.cocktailbar.CreateCocktailFragment"
+        android:name="surf.summerschool23.cocktailbar.presentation.view.CreateCocktailFragment"
         android:label="fragment_create_cocktail"
         tools:layout="@layout/fragment_create_cocktail" />
 </navigation>
