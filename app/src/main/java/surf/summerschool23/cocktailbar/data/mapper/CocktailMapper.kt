@@ -5,10 +5,7 @@ import surf.summerschool23.cocktailbar.domain.entity.CocktailEntity
 
 class CocktailMapper {
 
-    fun toEntity(cocktailModel: CocktailModel?): CocktailEntity? {
-        if (cocktailModel == null)
-            return null
-
+    fun toEntity(cocktailModel: CocktailModel): CocktailEntity {
         return CocktailEntity(
             title = cocktailModel.title,
             description = cocktailModel.description ?: "",
@@ -18,10 +15,7 @@ class CocktailMapper {
         )
     }
 
-    fun toDbModel(cocktailEntity: CocktailEntity?): CocktailModel? {
-        if (cocktailEntity == null)
-            return null
-
+    fun toDbModel(cocktailEntity: CocktailEntity): CocktailModel {
         return CocktailModel(
             title = cocktailEntity.title,
             description = cocktailEntity.description ?: "",
