@@ -3,4 +3,14 @@
     <style name="Text">
         <item name="fontFamily">@font/didact_gothic</item>
     </style>
+
+    <style name="Text.Title">
+        <item name="android:textSize">36sp</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="Text.Main">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/gray</item>
+    </style>
 </resources>

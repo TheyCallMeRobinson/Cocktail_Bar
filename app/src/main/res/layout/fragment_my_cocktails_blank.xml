@@ -19,52 +19,49 @@
 
     <TextView
         android:id="@+id/my_cocktails_blank_title_tv"
-        style="@style/Text"
+        style="@style/Text.Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:textColor="@color/black"
-        android:textSize="45sp"
-        android:text="My cocktails"
+        android:text="@string/my_cocktails"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/my_cocktails_blank_summer_holidays_iv"/>
 
     <TextView
         android:id="@+id/my_cocktails_blank_add_cocktail_tv"
-        style="@style/Text"
+        style="@style/Text.Main"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="92dp"
+        android:layout_marginBottom="40dp"
         android:text="Add your first cocktail here"
         android:textAlignment="center"
-        android:textColor="@color/black"
-        android:textSize="20dp"
         app:layout_constraintBottom_toTopOf="@+id/my_cocktails_blank_arrow_iv"
-        app:layout_constraintEnd_toEndOf="@+id/floatingActionButton"
-        app:layout_constraintStart_toStartOf="@+id/floatingActionButton" />
+        app:layout_constraintEnd_toEndOf="@+id/my_cocktails_blank_add_new_cocktail_fab"
+        app:layout_constraintStart_toStartOf="@+id/my_cocktails_blank_add_new_cocktail_fab" />
 
     <ImageView
         android:id="@+id/my_cocktails_blank_arrow_iv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="28dp"
+        android:layout_marginBottom="48dp"
         android:rotation="90"
         android:src="@drawable/arrow"
-        app:layout_constraintBottom_toTopOf="@+id/floatingActionButton"
-        app:layout_constraintEnd_toEndOf="@+id/floatingActionButton"
-        app:layout_constraintStart_toStartOf="@+id/floatingActionButton" />
+        app:layout_constraintBottom_toTopOf="@+id/my_cocktails_blank_add_new_cocktail_fab"
+        app:layout_constraintEnd_toEndOf="@+id/my_cocktails_blank_add_new_cocktail_fab"
+        app:layout_constraintStart_toStartOf="@+id/my_cocktails_blank_add_new_cocktail_fab" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton"
+        android:id="@+id/my_cocktails_blank_add_new_cocktail_fab"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_marginBottom="40dp"
+        app:srcCompat="@drawable/add_new"
+        app:fabCustomSize="80dp"
         app:backgroundTint="@color/main_blue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:tint="@color/white" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
