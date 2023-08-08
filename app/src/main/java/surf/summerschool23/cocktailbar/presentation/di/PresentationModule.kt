@@ -1,4 +1,7 @@
 package surf.summerschool23.cocktailbar.presentation.di
 
-class PresentationModule {
+import org.koin.dsl.module
+
+val presentationModule = module {
+
 }
