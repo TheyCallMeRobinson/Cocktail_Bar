@@ -4,7 +4,6 @@ import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.Dispatchers
 import androidx.lifecycle.liveData
 import surf.summerschool23.cocktailbar.data.environment.Resource
-import surf.summerschool23.cocktailbar.data.environment.Status
 import surf.summerschool23.cocktailbar.domain.usecase.GetCocktailsCountUseCase
 
 class MyCocktailsBlankViewModel(

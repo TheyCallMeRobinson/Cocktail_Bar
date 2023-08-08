@@ -25,7 +25,11 @@
         android:id="@+id/createCocktailFragment"
         android:name="surf.summerschool23.cocktailbar.presentation.view.CreateCocktailFragment"
         android:label="fragment_create_cocktail"
-        tools:layout="@layout/fragment_create_cocktail" />
+        tools:layout="@layout/fragment_create_cocktail" >
+        <action
+            android:id="@+id/action_createCocktailFragment_to_myCocktailsFragment"
+            app:destination="@id/myCocktailsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/myCocktailsBlankFragment"
         android:name="surf.summerschool23.cocktailbar.presentation.view.MyCocktailsBlankFragment"

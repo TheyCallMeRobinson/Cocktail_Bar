@@ -4,18 +4,15 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.Dispatchers
+
 import surf.summerschool23.cocktailbar.data.environment.Resource
-import surf.summerschool23.cocktailbar.domain.entity.CocktailEntity
 import surf.summerschool23.cocktailbar.domain.usecase.GetAllCocktailsUseCase
 import androidx.lifecycle.liveData
 import surf.summerschool23.cocktailbar.data.environment.Status
 
-class MyCocktailsFragmentViewModel(
+class MyCocktailsViewModel(
     private val getAllCocktailsUseCase: GetAllCocktailsUseCase
 ) : ViewModel() {
-
-    private val mutableCocktailsList = MutableLiveData<List<CocktailEntity>>()
-    val cocktailsList: LiveData<List<CocktailEntity>> = mutableCocktailsList
 
     fun getAllCocktailsList() = liveData(Dispatchers.IO) {
         emit(Resource.loading(data = null))
